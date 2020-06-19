@@ -6,34 +6,34 @@
  */
 
 import { CContainer } from "./CContainer";
-import { CViewOrientation, CViewPrimaryAxisPosition, CViewSecondaryAxisPosition } from "./enums";
+import { CFlexDirection, CFlexPrimaryAxisPosition, CFlexSecondaryAxisPosition } from "./enums";
 
 export class CStack extends CContainer<"div"> {
 
 	public constructor() {
 		super("div");
 		this.element.style.display = "flex";
-		this.orientation = CViewOrientation.column;
+		this.orientation = CFlexDirection.column;
 	}
 
-	public set orientation(value: CViewOrientation) {
+	public set orientation(value: CFlexDirection) {
 		this.element.style.flexDirection = value;
 	}
 
-	public set primaryAxisPositioning(value: CViewPrimaryAxisPosition) {
+	public set primaryAxisPositioning(value: CFlexPrimaryAxisPosition) {
 		this.element.style.justifyContent = value;
 	}
 
-	public get primaryAxisPositioning(): CViewPrimaryAxisPosition {
-		return this.element.style.justifyContent as CViewPrimaryAxisPosition;
+	public get primaryAxisPositioning(): CFlexPrimaryAxisPosition {
+		return this.element.style.justifyContent as CFlexPrimaryAxisPosition;
 	}
 
-	public set secondaryAxisPositioning(value: CViewSecondaryAxisPosition) {
+	public set secondaryAxisPositioning(value: CFlexSecondaryAxisPosition) {
 		this.element.style.alignItems = value;
 	}
 
-	public get secondaryAxisPositioning(): CViewSecondaryAxisPosition {
-		return this.element.style.alignItems as CViewSecondaryAxisPosition;
+	public get secondaryAxisPositioning(): CFlexSecondaryAxisPosition {
+		return this.element.style.alignItems as CFlexSecondaryAxisPosition;
 	}
 
 }

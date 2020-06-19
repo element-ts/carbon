@@ -5,7 +5,7 @@
  * github.com/elijahjcobb
  */
 
-import { CDisplayType } from "./enums";
+import { CDisplay } from "./enums";
 import { CColor } from "./CColor";
 
 export abstract class CElement<N extends keyof HTMLElementTagNameMap> {
@@ -54,12 +54,12 @@ export abstract class CElement<N extends keyof HTMLElementTagNameMap> {
 		return CColor.hex(this.element.style.background);
 	}
 
-	public set display(value: CDisplayType) {
+	public set display(value: CDisplay) {
 		this.element.style.display = value;
 	}
 
-	public get display(): CDisplayType {
-		return this.element.style.display as CDisplayType;
+	public get display(): CDisplay {
+		return this.element.style.display as CDisplay;
 	}
 
 }

@@ -5,14 +5,14 @@
  * github.com/elijahjcobb
  */
 
-export enum CDisplayType {
+export enum CDisplay {
 	block = "block",
 	none = "none",
 	flex = "flex",
 	inline = "inline"
 }
 
-export enum CViewPosition {
+export enum CPosition {
 	static = "static",
 	relative = "relative",
 	fixed = "fixed",
@@ -27,17 +27,29 @@ export enum CBoxSizing {
 	inherit = "inherit"
 }
 
-export enum CViewOrientation {
+export enum CFlexDirection {
 	row = "row",
 	column = "column"
 }
 
-export enum CViewPrimaryAxisPosition {
-	center = "center"
+export enum CFlexPrimaryAxisPosition {
+	flexStart = "flex-start",
+	flexEnd = "flex-end",
+	center = "center",
+	spaceBetween = "space-between",
+	spaceAround = "space-around",
+	initial = "initial",
+	inherit = "inherit"
 }
 
-export enum CViewSecondaryAxisPosition {
-	center = "center"
+export enum CFlexSecondaryAxisPosition {
+	stretch = "stretch",
+	center = "center",
+	flexStart = "flex-start",
+	flexEnd = "flex-end",
+	baseline = "baseline",
+	initial = "initial",
+	inherit = "inherit"
 }
 
 export enum CFontWeight {

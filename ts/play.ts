@@ -6,7 +6,7 @@
  */
 
 import { Carbon } from "./Carbon";
-import { CViewOrientation, CViewPrimaryAxisPosition, CViewSecondaryAxisPosition, CDisplayType, CTarget } from "./enums";
+import { CFlexDirection, CFlexPrimaryAxisPosition, CFlexSecondaryAxisPosition, CDisplay, CTarget } from "./enums";
 import { CStack } from "./CStack";
 import { CLabel } from "./CLabel";
 import { CButton } from "./CButton";
@@ -23,27 +23,27 @@ import { CImage } from "./CImage";
 
 
 const carbon = new Carbon("root");
-carbon.view.orientation = CViewOrientation.row;
-carbon.view.primaryAxisPositioning = CViewPrimaryAxisPosition.center;
-carbon.view.secondaryAxisPositioning = CViewSecondaryAxisPosition.center;
+carbon.view.orientation = CFlexDirection.row;
+carbon.view.primaryAxisPositioning = CFlexPrimaryAxisPosition.center;
+carbon.view.secondaryAxisPositioning = CFlexSecondaryAxisPosition.center;
 
 const sub1 = new CStack();
 
-sub1.orientation = CViewOrientation.column;
-sub1.primaryAxisPositioning = CViewPrimaryAxisPosition.center;
-sub1.secondaryAxisPositioning = CViewSecondaryAxisPosition.center;
+sub1.orientation = CFlexDirection.column;
+sub1.primaryAxisPositioning = CFlexPrimaryAxisPosition.center;
+sub1.secondaryAxisPositioning = CFlexSecondaryAxisPosition.center;
 
 const sub2 = new CStack();
 
 carbon.view.addSubviews(sub1, sub2);
 
 const label1 = new CLabel("1");
-label1.display = CDisplayType.none;
+label1.display = CDisplay.none;
 sub1.addSubview(label1);
 const button = new CButton();
 button.text = "Click me!";
 button.onClick = () => {
-	label1.display = CDisplayType.block;
+	label1.display = CDisplay.block;
 	label1.text = "WOW YOU CLICKED ME!";
 };
 sub1.addSubview(button);
